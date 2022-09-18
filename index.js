@@ -1,6 +1,6 @@
 const QRCode = require('qrcode');
 
-const DEFAULT_URL = 'https://capitalisk.com/wallet/ldpos/#/transactions/create';
+const DEFAULT_URL = 'https://capitalisk.com/wallet/ldpos/#/transaction/create';
 
 class QRCodeGenerator {
   /**
@@ -18,7 +18,7 @@ class QRCodeGenerator {
     }
 
     try {
-      await QRCode.toCanvas(element, data);
+      await QRCode.toCanvas(element, `${this.url}/${data}`);
     } catch (err) {
       return err;
     }
