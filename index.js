@@ -24,13 +24,25 @@ class QRCodeGenerator {
     }
   }
 
-  async generateBase64Image(data) {
+  async generateBase64Image(
+    data,
+    opts = {
+      errorCorrectionLevel: 'H',
+      type: 'image/png',
+      quality: 0.3,
+      margin: 1,
+      color: {
+        dark: '#FFFFFF',
+        light: '#161A22',
+      },
+    },
+  ) {
     if (typeof data === 'object' && !Array.isArray(data)) {
       data = this.queryBuilder(data);
     }
 
     try {
-      return await QRCode.toDataURL(`${this.url}/${data}`);
+      return await QRCode.toDataURL(`${this.url}/${data}`, opts);
     } catch (err) {
       return err;
     }
