@@ -1,0 +1,20 @@
+{
+  "name": "@capitalisk/qr-code-generator",
+  "version": "0.0.1",
+  "description": "A QR Code generator for pre-filling transactions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "qrcode",
+    "ldpos",
+    "blockchain",
+    "dao"
+  ],
+  "author": "Maarten Coppens",
+  "license": "MIT",
+  "dependencies": {
+    "qrcode": "^1.5.1"
+  }
+}
